@@ -1,151 +1,59 @@
-# ==========================================================
-# AEGISRAG - PRODUCTION-ORIENTED GIT IGNORE
-# ==========================================================
+# ==========================================
+# AegisRAG - Sensitive Data Protection
+# ==========================================
 
-
-# ----------------------------------------------------------
-# 1. ENVIRONMENT VARIABLES & APPLICATION SECRETS
-# ----------------------------------------------------------
-
+# 1. Environment secrets
 .env
 .env.*
 !.env.example
 
-# Secret and credential directories
+# 2. Private credentials and certificates
 secrets/
 credentials/
-
-# API keys and private credentials
 *.key
 *.pem
+*.cert
 *.p12
 *.pfx
-
-# Service account credentials
 service-account*.json
 *-credentials*.json
 
-
-# ----------------------------------------------------------
-# 2. PYTHON ENVIRONMENT & CACHE
-# ----------------------------------------------------------
-
-venv/
-.venv/
-env/
-ENV/
-backend/venv/
-
-__pycache__/
-*.py[cod]
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-
-
-# ----------------------------------------------------------
-# 3. NODE.JS & FRONTEND DEPENDENCIES
-# ----------------------------------------------------------
-
-node_modules/
-frontend/node_modules/
-
-.npm/
-dist/
-build/
-frontend/dist/
-
-
-# ----------------------------------------------------------
-# 4. LOCAL DATABASE & USER DATA
-# ----------------------------------------------------------
-
+# 3. Local databases
 *.db
 *.sqlite
 *.sqlite3
+*.db-wal
+*.db-shm
+*.sqlite-wal
+*.sqlite-shm
 
-# AegisRAG runtime database
-data/sqlite.db
+# 4. Database backups
+data/backups/
+backups/
+*.bak
+*.backup
 
-# Local user-uploaded documents
-data/raw_documents/
+# 5. Security audit logs and application logs
+*.log
+data/logs/
+logs/
 
-# Quarantined documents
-data/quarantine_vault/
+# 6. Private uploaded documents
+data/raw_documents/*
+!data/raw_documents/.gitkeep
 
-# Local vector database
+# 7. Quarantined documents
+data/quarantine_vault/*
+!data/quarantine_vault/.gitkeep
+
+# 8. Local ChromaDB storage
 data/chroma_db/
-
-# Local ChromaDB storage
 chroma_db/
 chroma_data/
 
-# User-specific uploads
-uploads/
-user_uploads/
+# 9. Large transformer model weights
+*.safetensors
 
-
-# ----------------------------------------------------------
-# 5. SECURITY AUDIT LOGS & APPLICATION LOGS
-# ----------------------------------------------------------
-
-*.log
-logs/
-
-data/security_audit.log
-data/logs/
-
-
-# ----------------------------------------------------------
-# 6. BACKUPS & TEMPORARY FILES
-# ----------------------------------------------------------
-
-*.bak
-*.backup
-*.old
-*.tmp
-
-tmp/
-temp/
-backups/
-
-
-# ----------------------------------------------------------
-# 7. MACHINE LEARNING CACHE
-# ----------------------------------------------------------
-
-.cache/
-.huggingface/
-.transformers_cache/
-
-# Downloaded model caches
-model_cache/
-models_cache/
-
-
-# ----------------------------------------------------------
-# 8. TEST & COVERAGE ARTIFACTS
-# ----------------------------------------------------------
-
-.coverage
-.coverage.*
-htmlcov/
-coverage.xml
-test-results/
-
-
-# ----------------------------------------------------------
-# 9. IDE & OPERATING SYSTEM FILES
-# ----------------------------------------------------------
-
-.vscode/
-.idea/
-
-.DS_Store
-Thumbs.db
-Desktop.ini
-
-
-# ----------------------------------------------------------
-# END OF AEGISRAG GIT IGNORE
-# ==========================================================
+# ==========================================
+# END
+# ==========================================
