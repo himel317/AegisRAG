@@ -18,7 +18,7 @@ credentials/
 service-account*.json
 *-credentials*.json
 
-# 3. Local databases
+# 3. Local databases and journals
 *.db
 *.sqlite
 *.sqlite3
@@ -27,18 +27,18 @@ service-account*.json
 *.sqlite-wal
 *.sqlite-shm
 
-# 4. Database backups
+# 4. Private database backups
 data/backups/
 backups/
 *.bak
 *.backup
 
-# 5. Security audit logs and application logs
+# 5. Security audit and application logs
 *.log
-data/logs/
 logs/
+data/logs/
 
-# 6. Private uploaded documents
+# 6. User-uploaded documents
 data/raw_documents/*
 !data/raw_documents/.gitkeep
 
